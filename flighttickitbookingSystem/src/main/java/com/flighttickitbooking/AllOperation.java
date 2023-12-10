@@ -875,33 +875,7 @@ public class AllOperation {
 			return;
 		}
 		
-		int input = 0;
-		boolean active = true;
-		while (active) {
-			System.out.println("================================================================================");
-			System.out.println("1. Update Seat Number");
-			System.out.println("2. Save");
-			System.out.println("3. Cancel");
-			System.out.print("Enter Choice -> ");
-			input = sc.nextInt();
-
-			switch (input) {
-			case 1:
-				updateBookingSeatNumber(booking);
-				break;
-			case 2:
-				bookingOperation();
-				break;
-			case 3:
-				bookingOperation();
-				break;
-			default:
-				System.out.println("Invalid Input");
-			}
-		}
-	}
-	
-	public static void updateBookingSeatNumber(Booking booking) {
+		
 		Flight flight = booking.getFlight();
 		int seatsNumber = intInput(0, flight.getTotalSeat(), "Enter Number of Seats");
 		int availableSeat = flight.getTotalSeat() - flight.getAllocatedSeat();
@@ -963,6 +937,7 @@ public class AllOperation {
 			System.out.println("Booking Cancelled");
 		}
 	}
+	
 	
 	public static void deleteBooking() {
 		System.out.print("Enter Booking Id -> ");
